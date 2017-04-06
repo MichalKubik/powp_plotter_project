@@ -27,7 +27,7 @@ public class IPlotterTest
         @Override
         public void drawTo(int x, int y)
         {
-            System.out.println("Plotter drawTo action..."); 
+            System.out.println("Plotter drawTo action... "); 
         }
 
         @Override
