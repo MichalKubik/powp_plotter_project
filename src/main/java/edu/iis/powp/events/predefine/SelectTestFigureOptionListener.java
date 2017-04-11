@@ -10,9 +10,19 @@ import edu.iis.powp.app.DriverManager;
 public class SelectTestFigureOptionListener implements ActionListener
 {
 
+	private String figureName;
+	
+	public SelectTestFigureOptionListener(String figure)
+	{
+		this.figureName = figure;
+	}
+	
     @Override
     public void actionPerformed(ActionEvent e)
     {
-        FiguresJoe.figureScript1(Application.getComponent(DriverManager.class).getCurrentPlotter());
+    	if(figureName.equals("Joe1"))
+    		FiguresJoe.figureScript1(Application.getComponent(DriverManager.class).getCurrentPlotter());
+    	else if(figureName.equals("Joe2"))
+    		FiguresJoe.figureScript2(Application.getComponent(DriverManager.class).getCurrentPlotter());
     }
 }
