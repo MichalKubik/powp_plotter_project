@@ -1,23 +1,30 @@
 package edu.iss.powp.command;
 
+import java.util.ArrayList;
+
 import edu.iis.client.plottermagic.IPlotter;
 
 public class ComplexCommand implements PlotterCommand 
 {
-	private PlotterCommand commands[];
+	private ArrayList<PlotterCommand> commands;
+	
+	public ComplexCommand()
+	{
+		commands = new ArrayList<PlotterCommand>();
+	}
 	
 	public void add(PlotterCommand command)
 	{
-		commands[commands.length] = command;
+		commands.add(command);
 	}
 	
 	@Override
 	public void execute(IPlotter driver) 
 	{
 		// TODO Auto-generated method stub
-		int n = commands.length;
+		int n = commands.size();
 		for(int i=0;i<n;i++)
-			commands[i].execute(driver);
+			commands.get(i).execute(driver);
 	}
 
 }

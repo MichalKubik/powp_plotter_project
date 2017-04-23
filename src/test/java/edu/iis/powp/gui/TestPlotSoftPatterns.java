@@ -14,6 +14,8 @@ import edu.iis.powp.app.Context;
 import edu.iis.powp.app.DriverManager;
 import edu.iis.powp.appext.ApplicationWithDrawer;
 import edu.iis.powp.events.predefine.SelectChangeVisibleOptionListener;
+import edu.iis.powp.events.predefine.SelectTestCommandOneListener;
+import edu.iis.powp.events.predefine.SelectTestCommandTwoListener;
 import edu.iis.powp.events.predefine.SelectTestFigureOptionListener;
 import edu.kis.powp.drawer.panel.DefaultDrawerFrame;
 import edu.kis.powp.drawer.panel.DrawPanelController;
@@ -32,9 +34,13 @@ public class TestPlotSoftPatterns
 	private static void setupPresetTests(Context context) {
 	    SelectTestFigureOptionListener selectTestFigureOptionListenerJoe1 = new SelectTestFigureOptionListener("Joe1");
 	    SelectTestFigureOptionListener selectTestFigureOptionListenerJoe2 = new SelectTestFigureOptionListener("Joe2");
+	    SelectTestCommandOneListener selectTestCommandOneListener = new SelectTestCommandOneListener();
+	    SelectTestCommandTwoListener selectTestCommandTwoListener = new SelectTestCommandTwoListener();
 		
 		context.addTest("Figure Joe 1", selectTestFigureOptionListenerJoe1);
 		context.addTest("Figure Joe 2", selectTestFigureOptionListenerJoe2);
+		context.addTest("Command one - rectangle", selectTestCommandOneListener);
+		context.addTest("Command two - square", selectTestCommandTwoListener);
 	}
 
 	/**
